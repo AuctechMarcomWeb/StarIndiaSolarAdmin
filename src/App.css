@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+/* GLOBAL FONT */
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  @apply font-sans;
+}
+
+.sidebar-dark {
+  --cui-body-color:#f5f5f5;
+  --cui-body-bg: #ffffff;
+  --cui-emphasis-color: #;
+  --cui-secondary-color:#f5f5f5;
+  --cui-secondary-bg:#008235;
+  --cui-tertiary-color: #008235;
+  --cui-tertiary-bg:#008235;
+  --cui-border-color: #008235 !important;
+  /* border: none !important; */
+}
+.sidebar-nav .nav-link {
+      color:#333
+}
+.header.header-sticky {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 93 !important;
+}
+ 
+.sidebar-fixed,
+.sidebar-narrow-unfoldable,
+.sidebar-overlaid {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /* z-index: var(--cui-sidebar-zindex); */
+    z-index: 104 !important;
+}
+ .custom-select-placeholder .ant-select-selection-placeholder,
+.custom-select-placeholder .ant-select-selection-item {
+  color: #3a3939 !important;
+  font-size: 16px !important;    /* Same as bootstrap select */
+  font-weight: 400 !important;   /* Normal weight */
+  opacity: 1 !important;
+}
+@media (max-width: 991.98px) {
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* z-index: var(--cui-backdrop-zindex); */
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--cui-backdrop-bg);
+        z-index: 5 !important;
+    }
+}
+body {
+  background-color: #f7f7f7 !important;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0;
+    bottom: 0;
+    width: 250px !important;
+    z-index: 9999 !important;
+    transform: translateX(0) !important;
+  }
+ 
+  .sidebar .simplebar-mask {
+    overflow: visible !important;
+  }
+ 
+  body {
+    overflow-x: hidden;
+  }
+}
+
+body,
+a,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+placeholder,
+select,
+option,
+textarea {
+
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.ant-modal,
+.ant-table,
+.ant-tooltip,
+.ant-pagination,
+.ant-select,
+.ant-input {
+  font-family: 'Open Sans', sans-serif !important;
+}
+.ant-btn {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.ast-button,
+placeholder,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+select,
+textarea .ast-custom-button {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.ast-button,
+.ast-custom-button,
+body,
+p,
+button,
+input[type=button],
+input[type=submit],
+textarea {
+  line-height: 1.85714285714286 !important;
+}
+
+
+@media (max-width: 767px) {
+
+  body,
+  button,
+  input,
+  select,
+  textarea,
+  p,
+  li,
+  a,
+  .ast-button,
+  .ast-custom-button {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+
+  }
+}
