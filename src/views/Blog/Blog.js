@@ -206,7 +206,10 @@ const Blog = () => {
                     <td className="py-2 border border-gray-300 text-left pl-3">
                       <div className="flex items-center gap-3">
                         <img
-                          src={item?.mainImage || 'https://via.placeholder.com/150'}
+                          src={
+                            item?.mainImage ||
+                            'https://res.cloudinary.com/dusw7izfx/image/upload/v1765350319/jbnsbx9lxttvmnxh2wjo.png'
+                          }
                           alt={item?.mainImageName}
                           className="w-14 h-10 rounded object-cover border"
                         />

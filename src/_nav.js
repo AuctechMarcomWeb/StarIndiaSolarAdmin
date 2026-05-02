@@ -49,12 +49,7 @@ const useNav = () => {
       to: '/contacts',
       icon: <ContactsOutlined className="me-3" />,
     },
-    // {
-    //   component: CNavItem,
-    //   name: 'Comments',
-    //   to: '/comments',
-    //   icon: <CommentOutlined className="me-3" />,
-    // },
+   
   ]
 
   return navItems

@@ -4,24 +4,19 @@ import { getRequest } from '../Helpers'
 import { useNavigate } from 'react-router-dom'
 import { deleteCookie } from '../Hooks/cookie'
 import { AppContext } from '../Context/AppContext'
+import Cookies from 'js-cookie'
 
 const DefaultLayout = () => {
   const navigate = useNavigate()
   const [userData, setUserData] = useState(null)
-  const { user, setUser } = useContext(AppContext)
+  const { setUser } = useContext(AppContext)
 
   useEffect(() => {
-    const savedUser = localStorage.getItem('solarToken')
-
-    // if (!savedUser) return
-
-    const parsedUser = JSON.parse(savedUser)
-
-    setUserData(parsedUser)
+    const token = Cookies.get('solarToken')
+    setUserData(token)
 
     getRequest(`auth/profile`)
       .then((res) => {
-        console.log('res data', res?.data?.data)
         setUser(res?.data?.data)
       })
       .catch((error) => {
@@ -29,7 +24,8 @@ const DefaultLayout = () => {
           deleteCookie('solarToken')
           deleteCookie('UserId')
           navigate('/login')
-          console.error('Unauthorized: Redirecting to login page')
+        } else if (error.response?.status >= 500) {
+          navigate('/500')
         } else {
           console.log('error', error)
         }
@@ -44,7 +40,7 @@ const DefaultLayout = () => {
         className="wrapper d-flex flex-column min-vh-100"
       >
         <AppHeader userData={userData} />
-        <div className=" flex-grow-1">
+        <div className="flex-grow-1">
           <AppContent userData={userData} />
         </div>
         <AppFooter userData={userData} />
