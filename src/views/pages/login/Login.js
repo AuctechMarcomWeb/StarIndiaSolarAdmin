@@ -20,8 +20,8 @@ const Login = () => {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
-    phone: '9812345678',
-    password: 'Admin@123',
+    phone: '',
+    password: '',
   })
 
   const [timeLeft, setTimeLeft] = useState(0)
